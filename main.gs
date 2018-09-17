@@ -1035,7 +1035,7 @@ loadTimesheets = function (exports) {
   // Send mesage who don't start work
   Timesheets.prototype.confirmSignIn = function(username, message) {
     var self = this;
-    var holidays = _.compact(_.map((this.settings.get("休日") || "").split(','), function(s) {
+    var holidays = _.compact(_.map((this.settings.get("Holiday") || "").split(','), function(s) {
       var date = DateUtils.parseDateTime(s);
       return date ? DateUtils.format("Y/m/d", date) : undefined;
     }));
