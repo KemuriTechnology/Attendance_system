@@ -5,15 +5,20 @@
 ### About working time
 **When you start working**
 `Hello, Hi!, Good morning`
+
 **When you delete satrting time**
 `Hello cancel`
+
 **When you modify satrting time**
 `Hello hh:mm`
 eg. Hello 12:30 (When you modify starting time to 12:30)
+
 **When you finish working**
 `See you, Bye`
+
 **When you delete ending time**
 `Bye cancel`
+
 **When you modify ending time**
 `Bye hh:mm`
 eg. Bye 12:30 (When you modify ending time to 12:30)
