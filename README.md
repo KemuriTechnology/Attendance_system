@@ -15,7 +15,7 @@ https://github.com/leonhartX/gas-github
 
 https://script.google.com/a/kemuri.in/d/1-keOTtQZPxqjkPqzVKb6T6rHKREsfN0-BZnap17kTGnRET4vCOu3Vc2Z/edit?usp=sharing
 
-4. Change the place of `Repo` in upside to `KemuriTechnology/Attendance_system`
+4. Change the place of `Repository` in upside to `KemuriTechnology/Attendance_system`
 
 5. Tap the button of `Pull` in upside ( **Don’t tap `Push`** )
 
