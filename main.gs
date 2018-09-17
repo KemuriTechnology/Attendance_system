@@ -881,11 +881,6 @@ loadTimesheets = function (exports) {
     if(this.datetime) {
       var data = this.storage.get(username, this.datetime);
       if(!data.lunchFinish || data.lunchFinish === '-') {
-        /*
-        var lunchStartTimeString = data.lunchStart.getHours()*60 + data.lunchStart.getMinutes();
-        var lunchFinishTimeString = this.datetime.getHours()*60 + this.datetime.getMinutes();
-        this.storage.set(username, this.datetime, {lunchFinish: this.datetime, lunchTime: lunchStartTimeString});
-         */ 
         this.storage.set(username, this.datetime, {lunchFinish: this.datetime});
         this.responder.template("Finish lunch", username, this.datetimeStr);
       }
