@@ -395,7 +395,7 @@ loadGSTemplate = function() {
             "<@#1> I deleted your leave in #2",
             "<@#1> I registerd #2 as a remote work",
             "<@#1> I deleted your remote work in #2",
-            "<@#1> I registered your lunch time as #2"
+            "<@#1> ver2 I registered your lunch time as #2"
           ]
         ]);
       }
@@ -766,6 +766,7 @@ loadTimesheets = function (exports) {
     if(this.datetime !== null) {
       this.dateStr = DateUtils.format("Y/m/d", this.datetime);
       this.datetimeStr = DateUtils.format("Y/m/d H:M", this.datetime);
+      this.timeStr = DateUtils.format("H:M", this.datetime)
     }
 
     // Command list
@@ -900,7 +901,7 @@ loadTimesheets = function (exports) {
       var data = this.storage.get(username, this.datetime);
       if(!data.lunchFinish || data.lunchFinish === '-') {
         this.storage.set(username, this.datetime, {lunchStart: '-', lunchFinish: '-', lunchTime: this.datetime});
-        this.responder.template("ランチ時間", username, this.datetimeStr);
+        this.responder.template("ランチ時間", username, this.timeStr);
       }
     }
   };
