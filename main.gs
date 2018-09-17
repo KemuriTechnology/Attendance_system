@@ -459,7 +459,7 @@ loadGSTimesheets = function () {
         { name: 'Note' },
         { name: 'Start Lunch'},
         { name: 'Finish Lunch'},
-        { name: 'Lunch Time'}
+        { name: 'Lunch Time (Minutes)'}
       ],
       properties: [
         { name: 'DayOff', value: '土,日', comment: '← You should write like 月,火,水. To stop accont, you should write 全部'},
@@ -634,7 +634,7 @@ function setUp() {
     settings.setNote('Slack Incoming URL', 'Write Slack incoming URL');
     settings.set('Start date', DateUtils.format("Y-m-d", DateUtils.now()));
     settings.setNote('Start date', 'You should not change');
-    settings.set('Ignored users', 'miyamoto,hubot,slackbot,incoming-webhook');
+    settings.set('Ignored users', 'miyamoto,hubot,slackbot,incoming-webhook,ohnishi');
     settings.setNote('Ignored users', 'Set the users who do not react as delimiters. Please be sure to specify bot.');
 
     // Set holiday (iCal)
@@ -769,7 +769,8 @@ loadTimesheets = function (exports) {
     if(this.datetime !== null) {
       this.dateStr = DateUtils.format("Y/m/d", this.datetime);
       this.datetimeStr = DateUtils.format("Y/m/d H:M", this.datetime);
-      this.timeStr = DateUtils.format("H:M", this.datetime)
+      //this.timeStr = DateUtils.format("H:M", this.datetime);
+      this.timeStr = (this.datetime.getHours() + ":" + this.datetime.getMinutes()).toString();
     }
 
     // Command list
@@ -784,11 +785,11 @@ loadTimesheets = function (exports) {
       ['confirmSignOut', /__confirmSignOut__/],
       ['actionStartLunch', /(start).*(lunch)/],
       ['actionFinishLunch', /(finish).*(lunch)/],
-      ['actionLeave', /(有給|(L|l)eave)/],
       ['actionCancelLeave', /(有給|(L|l)eave).*(キャンセル|消|止|やめ|ません|cancel)/],
+      ['actionLeave', /(有給|(L|l)eave)/],
+      ['actionLunch', /(ランチ|(L|l)unch).*(時間|time)/],
       ['actionCancelRemote', /(リモート|(R|r)emote).*(キャンセル|消|止|やめ|ません|cancel)/],
-      ['actionRemote', /(リモート|(R|r)emote)/],
-      ['actionLunch', /(ランチ|(L|l)unch).*(時間|time)/]
+      ['actionRemote', /(リモート|(R|r)emote)/]
     ];
 
     // Search method from message
@@ -880,6 +881,11 @@ loadTimesheets = function (exports) {
     if(this.datetime) {
       var data = this.storage.get(username, this.datetime);
       if(!data.lunchFinish || data.lunchFinish === '-') {
+        /*
+        var lunchStartTimeString = data.lunchStart.getHours()*60 + data.lunchStart.getMinutes();
+        var lunchFinishTimeString = this.datetime.getHours()*60 + this.datetime.getMinutes();
+        this.storage.set(username, this.datetime, {lunchFinish: this.datetime, lunchTime: lunchStartTimeString});
+         */ 
         this.storage.set(username, this.datetime, {lunchFinish: this.datetime});
         this.responder.template("Finish lunch", username, this.datetimeStr);
       }
@@ -903,7 +909,8 @@ loadTimesheets = function (exports) {
     if(this.datetime) {
       var data = this.storage.get(username, this.datetime);
       if(!data.lunchFinish || data.lunchFinish === '-') {
-        this.storage.set(username, this.datetime, {lunchStart: '-', lunchFinish: '-', lunchTime: this.datetime});
+        var lunchTimeString = this.datetime.getHours()*60 + this.datetime.getMinutes();
+        this.storage.set(username, this.datetime, {lunchStart: '-', lunchFinish: '-', lunchTime: lunchTimeString});
         this.responder.template("Lunch time", username, this.timeStr);
       }
     }
