@@ -4,31 +4,19 @@
 
 ### About working time
 
-- Start working
+- Start working : `Hello`, `Hi!`, `Good morning`
 
-`Hello`, `Hi!`, `Good morning`
+- Delete starting time : `Hello cancel`
 
-- Delete starting time
-
-`Hello cancel`
-
-- Modify starting time
-
-`Hello hh:mm`
+- Modify starting time : `Hello hh:mm`
 
 eg. Hello 12:30 (When you modify starting time to 12:30)
 
-- Finish working
+- Finish working : `See you`, `Bye`
 
-`See you`, `Bye`
+- Delete ending time : `Bye cancel`
 
-- Delete ending time
-
-`Bye cancel`
-
-- Modify ending time
-
-`Bye hh:mm`
+- Modify ending time : `Bye hh:mm`
 
 eg. Bye 12:30 (When you modify ending time to 12:30)
 
