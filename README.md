@@ -31,6 +31,8 @@ Spread sheet is below. After you talk with ohnishi-san, your tab will appear.
 
 https://docs.google.com/spreadsheets/d/1N7SvkA36yC0EbjM5d9YGpIQz6q5GAAzMp1AE5-NvIeU/edit?usp=sharing
 
+
+
 ## 2. Commands
 
 ### About working time
