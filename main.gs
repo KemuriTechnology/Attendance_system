@@ -321,7 +321,7 @@ loadGSProperties = function (exports) {
     this.sheet.getRange("A"+(this.sheet.getLastRow()+1)+":B"+(this.sheet.getLastRow()+1)).setValues([[key, val]]);
     return val;
   };
-  
+
   GSProperties.prototype.setlunch = function(key, val) {
     if(this.sheet.getLastRow() > 0) {
       var vals = this.sheet.getRange("A1:A"+this.sheet.getLastRow()).getValues();
@@ -375,7 +375,7 @@ loadGSTemplate = function() {
         this.sheet.getRange("A1:Y2").setValues([
           [
             "出勤", "出勤更新", "退勤", "退勤更新", "休暇", "休暇取消",
-            "出勤中", "出勤なし", "休暇中", "休暇なし", "出勤確認", "退勤確認", "出勤取り消し", "退勤取り消し", "ランチ開始", "ランチ開始更新", "ランチ開始取り消し", 
+            "出勤中", "出勤なし", "休暇中", "休暇なし", "出勤確認", "退勤確認", "出勤取り消し", "退勤取り消し", "ランチ開始", "ランチ開始更新", "ランチ開始取り消し",
             "ランチ終了", "ランチ終了更新", "ランチ終了取り消し", "有給休暇", "有給休暇取消", "リモート", "リモート取消", "ランチ時間"
           ],
           [
@@ -785,7 +785,7 @@ loadTimesheets = function (exports) {
       ['actionCancelLeave', /(有給|(L|l)eave).*(キャンセル|消|止|やめ|ません|cancel)/],
       ['actionCancelRemote', /(リモート|(R|r)emote).*(キャンセル|消|止|やめ|ません|cancel)/],
       ['actionRemote', /(リモート|(R|r)emote)/],
-      ['actionLunch', /(ランチ|(L|l)unch).*(時間|time|xyz)/]
+      ['actionLunch', /(ランチ|(L|l)unch).*(時間|time)/]
     ];
 
     // Search method from message
@@ -822,8 +822,8 @@ loadTimesheets = function (exports) {
       }
     }
   };
-  
-  
+
+
 
   // Finish work
   Timesheets.prototype.actionSignOut = function(username, message) {
@@ -871,7 +871,7 @@ loadTimesheets = function (exports) {
       }
     }
   };
-  
+
   // Finish lunch
   Timesheets.prototype.actionFinishLunch = function(username, message) {
     if(this.datetime) {
@@ -894,7 +894,7 @@ loadTimesheets = function (exports) {
       }
     }
   };
-  
+
   // Lunch time request
   Timesheets.prototype.actionLunch = function(username, message) {
     if(this.datetime) {
@@ -941,7 +941,7 @@ loadTimesheets = function (exports) {
       }
     }
   };
-  
+
   // Cancel leave
   Timesheets.prototype.actionCancelLeave = function(username, message) {
     if(this.date) {
@@ -966,7 +966,7 @@ loadTimesheets = function (exports) {
       }
     }
   };
-  
+
   // Cancel remote
   Timesheets.prototype.actionCancelRemote = function(username, message) {
     if(this.date) {
