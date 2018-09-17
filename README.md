@@ -75,7 +75,7 @@ https://docs.google.com/spreadsheets/d/1N7SvkA36yC0EbjM5d9YGpIQz6q5GAAzMp1AE5-Nv
 
 - Delete leave : `leave MM/DD cancel`, `leave today cancel`, `leave tomorrow cancel`, `leave yesterday cancel` 
 
-### About Rremote work
+### About Remote work
 
 - Register remote work : `remote MM/DD`, `remote today`, `remote tomorrow`, `remote yesterday` [ eg. remote 09/05 (The case you register remote work in September 5) ]
 
