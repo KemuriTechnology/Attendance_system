@@ -8,9 +8,7 @@
 
 - Delete starting time : `Hello cancel`
 
-- Modify starting time : `Hello hh:mm`
-
-eg. Hello 12:30 (When you modify starting time to 12:30)
+- Modify starting time : `Hello hh:mm` [ eg. Hello 12:30 (When you modify starting time to 12:30) ]
 
 - Finish working : `See you`, `Bye`
 
