@@ -6,11 +6,9 @@
 2. I install Google Chrome extension
 
 Chrome extension:
-
 https://chrome.google.com/webstore/detail/google-apps-script-github/lfjcgcmkmjjlieihflfhjopckgpelofo
 
 Explanation of extension:
-
 https://github.com/leonhartX/gas-github
 
 3. Go to below Page
