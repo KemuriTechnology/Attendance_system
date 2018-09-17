@@ -395,7 +395,7 @@ loadGSTemplate = function() {
             "<@#1> I deleted your leave in #2",
             "<@#1> I registerd #2 as a remote work",
             "<@#1> I deleted your remote work in #2",
-            "<@#1> ver2 I registered your lunch time as #2"
+            "<@#1> I registered your lunch time as #2"
           ]
         ]);
       }
@@ -785,7 +785,7 @@ loadTimesheets = function (exports) {
       ['actionCancelLeave', /(有給|(L|l)eave).*(キャンセル|消|止|やめ|ません|cancel)/],
       ['actionCancelRemote', /(リモート|(R|r)emote).*(キャンセル|消|止|やめ|ません|cancel)/],
       ['actionRemote', /(リモート|(R|r)emote)/],
-      ['actionLunch', /(ランチ|(L|l)unch).*(時間|time)/]
+      ['actionLunch', /(ランチ|(L|l)unch).*(時間|time|xyz)/]
     ];
 
     // Search method from message
