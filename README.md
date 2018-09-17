@@ -22,12 +22,28 @@
 
 - Start lunch (Additional) : `start lunch`
 
+- Delete lunch start time : `start lunch cancel`
+
+- Modify lunch start time : `start lunch hh:mm`
+
 - Finish lunch (Additional) : `finish lunch`
 
-### Others
+- Delete lunch end time : `finish lunch cancel`
+
+- Modify lunch end time : `finish lunch hh:mm`
+
+### About holiday and leave
 
 - Register holiday : `holiday MM/DD`, `holiday today`, `holiday tomorrow`, `holiday yesterday` [ eg. holiday 09/05 (The case you register holiday in September 5) ]
 
+- Delete holiday : `holiday MM/DD cancel`, `holiday today cancel`, `holiday tomorrow cancel`, `holiday yesterday cancel` 
+
 - Register leave : `leave MM/DD`, `leave today`, `leave tomorrow`, `leave yesterday` [ eg. leave 09/05 (The case you register leave in September 5) ]
 
+- Delete leave : `leave MM/DD cancel`, `leave today cancel`, `leave tomorrow cancel`, `leave yesterday cancel` 
+
+### About Rremote work
+
 - Register remote work : `remote MM/DD`, `remote today`, `remote tomorrow`, `remote yesterday` [ eg. remote 09/05 (The case you register remote work in September 5) ]
+
+- Delete remote work : `remote MM/DD cancel`, `remote today cancel`, `remote tomorrow cancel`, `remote yesterday cancel` 
