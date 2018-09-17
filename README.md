@@ -1,6 +1,39 @@
 # Attendance_system
 
-## Commands
+## 1. How to use
+1. Fork and edit, push, merge as usual
+
+2. I install Google Chrome extension
+
+Chrome extension:
+
+https://chrome.google.com/webstore/detail/google-apps-script-github/lfjcgcmkmjjlieihflfhjopckgpelofo
+
+Explanation of extension:
+
+https://github.com/leonhartX/gas-github
+
+3. Go to below Page
+
+https://script.google.com/a/kemuri.in/d/1-keOTtQZPxqjkPqzVKb6T6rHKREsfN0-BZnap17kTGnRET4vCOu3Vc2Z/edit?usp=sharing
+
+4. Change the place of `Repo` in upside to `KemuriTechnology/Attendance_system`
+
+5. Tap the button of `Pull` in upside ( **Don’t tap `Push`** )
+
+6. Go to `File` → `Manage versions…` → `Save new version`
+
+7. Go to `Publish` → `Deploy as Web app…`
+
+8. Set project version to newest one.
+
+Reference:
+
+Spread sheet is below. After you talk with ohnishi-san, your tab will appear.
+
+https://docs.google.com/spreadsheets/d/1N7SvkA36yC0EbjM5d9YGpIQz6q5GAAzMp1AE5-NvIeU/edit?usp=sharing
+
+## 2. Commands
 
 ### About working time
 
