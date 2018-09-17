@@ -4,29 +4,29 @@
 
 ### About working time
 
-When you start working
+- Start working
 
 `Hello`, `Hi!`, `Good morning`
 
-When you delete satrting time
+- Delete starting time
 
 `Hello cancel`
 
-When you modify satrting time
+- Modify starting time
 
 `Hello hh:mm`
 
 eg. Hello 12:30 (When you modify starting time to 12:30)
 
-When you finish working
+- Finish working
 
 `See you`, `Bye`
 
-When you delete ending time
+- Delete ending time
 
 `Bye cancel`
 
-When you modify ending time
+- Modify ending time
 
 `Bye hh:mm`
 
@@ -34,35 +34,35 @@ eg. Bye 12:30 (When you modify ending time to 12:30)
 
 ### About lunch time
 
-When you register lunch time
+- Register lunch time
 
 `lunch time hh:mm`
 
 eg. lunch time 00:15 (The case your lunch time is 15 minutes)
 
-When you start lunch (Additional)
+- Start lunch (Additional)
 
 `start lunch`
 
-When you finish lunch (Additional)
+- Finish lunch (Additional)
 
 `finish lunch`
 
 ### Others
 
-**When you register holiday**
+- Register holiday
 
 `holiday MM/DD`, `holiday today`, `holiday tomorrow`, `holiday yesterday`
 
 eg. holiday 09/05 (The case you register holiday in September 5)
 
-**When you register leave**
+- Register leave
 
 `leave MM/DD`, `leave today`, `leave tomorrow`, `leave yesterday`
 
 eg. leave 09/05 (The case you register leave in September 5)
 
-**When you register remote work**
+- Register remote work
 
 `remote MM/DD`, `remote today`, `remote tomorrow`, `remote yesterday`
 
