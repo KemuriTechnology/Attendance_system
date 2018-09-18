@@ -922,7 +922,7 @@ loadTimesheets = function (exports) {
       var dateObj = new Date(this.date[0], this.date[1]-1, this.date[2]);
       var data = this.storage.get(username, dateObj);
       if(!data.signOut || data.signOut === '-') {
-        this.storage.set(username, dateObj, {signIn: '-', signOut: '-', note: message, lunchStart: '-', lunchFinish: '-'});
+        this.storage.set(username, dateObj, {signIn: '-', signOut: '-', note: message, lunchStart: '-', lunchFinish: '-', lunchTime: '-'});
         this.responder.template("Holiday", username, DateUtils.format("Y/m/d", dateObj));
       }
     }
@@ -934,7 +934,7 @@ loadTimesheets = function (exports) {
       var dateObj = new Date(this.date[0], this.date[1]-1, this.date[2]);
       var data = this.storage.get(username, dateObj);
       if(!data.signOut || data.signOut === '-') {
-        this.storage.set(username, dateObj, {signIn: null, signOut: null, note: null, lunchStart: null, lunchFinish: null});
+        this.storage.set(username, dateObj, {signIn: '-', signOut: '-', note: '-', lunchStart: '-', lunchFinish: '-', lunchTime: '-'});
         this.responder.template("Delete holiday", username, DateUtils.format("Y/m/d", dateObj));
       }
     }
@@ -946,7 +946,7 @@ loadTimesheets = function (exports) {
       var dateObj = new Date(this.date[0], this.date[1]-1, this.date[2]);
       var data = this.storage.get(username, dateObj);
       if(!data.signOut || data.signOut === '-') {
-        this.storage.set(username, dateObj, {signIn: '-', signOut: '-', note: message, lunchStart: '-', lunchFinish: '-'});
+        this.storage.set(username, dateObj, {signIn: '-', signOut: '-', note: message, lunchStart: '-', lunchFinish: '-', lunchTime: '-'});
         this.responder.template("Leave", username, DateUtils.format("Y/m/d", dateObj));
       }
     }
@@ -958,7 +958,7 @@ loadTimesheets = function (exports) {
       var dateObj = new Date(this.date[0], this.date[1]-1, this.date[2]);
       var data = this.storage.get(username, dateObj);
       if(!data.signOut || data.signOut === '-') {
-        this.storage.set(username, dateObj, {signIn: null, signOut: null, note: null, lunchStart: null, lunchFinish: null});
+        this.storage.set(username, dateObj, {signIn: null, signOut: '-', note: '-', lunchStart: '-', lunchFinish: '-', lunchTime: '-'});
         this.responder.template("Delete leave", username, DateUtils.format("Y/m/d", dateObj));
       }
     }
