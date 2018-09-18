@@ -819,7 +819,12 @@ loadTimesheets = function (exports) {
           this.responder.template("Update starting time", username, this.datetimeStr);
         }else{
           if( this.message.indexOf('cancel') != -1){
-            this.storage.set(username, this.datetime, {signIn: '-'});
+            if(!data.signOut || data.signOut === '-'){
+              this.storage.set(username, this.datetime, {signIn: '-'});
+            }else{
+              this.storage.set(username, this.datetime, {signIn: '-', signOut: '-'});
+            }
+
             this.responder.template("Delete starting time", username, this.datetimeStr);
           }
         }
