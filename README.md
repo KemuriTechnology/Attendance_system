@@ -1,6 +1,6 @@
 # Attendance_system
 
-## 1. How to use
+## 1. How to edit source code
 1. Fork and edit, push, merge as usual
 
 2. I install Google Chrome extension
