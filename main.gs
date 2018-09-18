@@ -833,7 +833,7 @@ loadTimesheets = function (exports) {
   Timesheets.prototype.actionSignOut = function(username, message) {
     if(this.datetime) {
       var data = this.storage.get(username, this.datetime);
-      if(!data.signOut || data.signOut === '-') {
+      if((!data.signOut || data.signOut === '-') && data.signIn && (data.signIn != '-')) {
         this.storage.set(username, this.datetime, {signOut: this.datetime});
         this.responder.template("Finish work", username, this.datetimeStr);
       }
