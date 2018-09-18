@@ -35,7 +35,7 @@ https://docs.google.com/spreadsheets/d/1N7SvkA36yC0EbjM5d9YGpIQz6q5GAAzMp1AE5-Nv
 
 ## 2. Commands
 
-### About working time
+### Working time
 
 - Start working : `Hello`, `Hi!`, `Good morning`
 
@@ -49,7 +49,7 @@ https://docs.google.com/spreadsheets/d/1N7SvkA36yC0EbjM5d9YGpIQz6q5GAAzMp1AE5-Nv
 
 - Modify ending time : `Bye hh:mm` [ eg. Bye 12:30 (When you modify ending time to 12:30) ]
 
-### About lunch time
+### Lunch time
 
 - Register lunch time : `lunch time hh:mm` [ eg. lunch time 00:15 (The case your lunch time is 15 minutes) ]
 
@@ -65,7 +65,7 @@ https://docs.google.com/spreadsheets/d/1N7SvkA36yC0EbjM5d9YGpIQz6q5GAAzMp1AE5-Nv
 
 - Modify lunch end time : `finish lunch hh:mm`
 
-### About holiday and leave
+### Holiday and leave
 
 - Register holiday : `holiday MM/DD`, `holiday today`, `holiday tomorrow`, `holiday yesterday` [ eg. holiday 09/05 (The case you register holiday in September 5) ]
 
@@ -75,8 +75,13 @@ https://docs.google.com/spreadsheets/d/1N7SvkA36yC0EbjM5d9YGpIQz6q5GAAzMp1AE5-Nv
 
 - Delete leave : `leave MM/DD cancel`, `leave today cancel`, `leave tomorrow cancel`, `leave yesterday cancel` 
 
-### About Remote work
+### Remote work
 
 - Register remote work : `remote MM/DD`, `remote today`, `remote tomorrow`, `remote yesterday` [ eg. remote 09/05 (The case you register remote work in September 5) ]
 
 - Delete remote work : `remote MM/DD cancel`, `remote today cancel`, `remote tomorrow cancel`, `remote yesterday cancel` 
+
+### Check
+
+- Check worker : `who is working?`
+- Check holiday people : `who is holiday?`
