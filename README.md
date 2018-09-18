@@ -64,9 +64,7 @@ https://chrome.google.com/webstore/detail/google-apps-script-github/lfjcgcmkmjjl
 (Reference) Explanation of the extension:
 https://github.com/leonhartX/gas-github
 
-3. Go to below Page
-
-https://script.google.com/a/kemuri.in/d/1-keOTtQZPxqjkPqzVKb6T6rHKREsfN0-BZnap17kTGnRET4vCOu3Vc2Z/edit?usp=sharing
+3. Go to GAS editor page.
 
 4. Change the place of `Repository` in upside to `KemuriTechnology/Attendance_system`
 
@@ -78,9 +76,7 @@ https://script.google.com/a/kemuri.in/d/1-keOTtQZPxqjkPqzVKb6T6rHKREsfN0-BZnap17
 
 8. Set project version to newest one.
 
-Reference:
+9. Talk and check spread sheet.
 
-Spread sheet is below. After you talk with ohnishi-san, your tab will appear.
 
-https://docs.google.com/spreadsheets/d/1N7SvkA36yC0EbjM5d9YGpIQz6q5GAAzMp1AE5-NvIeU/edit?usp=sharing
 
