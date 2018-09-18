@@ -81,7 +81,7 @@ https://docs.google.com/spreadsheets/d/1N7SvkA36yC0EbjM5d9YGpIQz6q5GAAzMp1AE5-Nv
 
 - Delete remote work : `remote MM/DD cancel`, `remote today cancel`, `remote tomorrow cancel`, `remote yesterday cancel` 
 
-### Check
+### Check status
 
 - Check worker : `who is working?`
 - Check holiday people : `who is holiday?`
