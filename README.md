@@ -3,12 +3,11 @@
 ## 1. How to edit source code
 1. Fork and edit, push, merge as usual
 
-2. I install Google Chrome extension
+2. Install below google chrome extension
 
-Chrome extension:
 https://chrome.google.com/webstore/detail/google-apps-script-github/lfjcgcmkmjjlieihflfhjopckgpelofo
 
-Explanation of extension:
+(Reference) Explanation of the extension:
 https://github.com/leonhartX/gas-github
 
 3. Go to below Page
