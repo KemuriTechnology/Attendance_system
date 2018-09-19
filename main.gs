@@ -908,11 +908,9 @@ loadTimesheets = function (exports) {
   Timesheets.prototype.actionLunch = function(username, message) {
     if(this.datetime) {
       var data = this.storage.get(username, this.datetime);
-      if(!data.lunchFinish || data.lunchFinish === '-') {
         var lunchTimeString = this.datetime.getHours()*60 + this.datetime.getMinutes();
         this.storage.set(username, this.datetime, {lunchStart: '-', lunchFinish: '-', lunchTime: lunchTimeString});
         this.responder.template("Lunch time", username, this.timeStr);
-      }
     }
   };
 
