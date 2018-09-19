@@ -909,7 +909,7 @@ loadTimesheets = function (exports) {
 
   // Lunch time request
   Timesheets.prototype.actionLunch = function(username, message) {
-    if(this.datetime) {
+    if(this.datetime && !!this.time) {
       var data = this.storage.get(username, this.datetime);
       var lunchTimeString = this.datetime.getHours()*60 + this.datetime.getMinutes();
       this.storage.set(username, this.datetime, {lunchStart: '-', lunchFinish: '-', lunchTime: lunchTimeString});
