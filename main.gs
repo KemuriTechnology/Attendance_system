@@ -704,7 +704,7 @@ loadSlack = function () {
   // Send received message to timesheets
   Slack.prototype.receiveMessage = function(message) {
     var username = String(message.user_name);
-    var body = String(message['text']);
+    var body = String(message['text']).toLowerCase();
 
     // Ignore particular user
     var ignore_users = (this.settings.get("Ignored users") || '').toLowerCase().replace(/^\s*(.*?)\s*$/, "$1").split(/\s*,\s*/);
@@ -775,21 +775,21 @@ loadTimesheets = function (exports) {
 
     // Command list
     var commands = [
-      ['actionSignOut', /(バ[ー〜ァ]*イ|ば[ー〜ぁ]*い|おやすみ|お[つっ]ー|おつ|さらば|お先|お疲|帰|乙|(B|b)ye|night|(c|see)\s*(u|you)|退勤|ごきげんよ|グ[ッ]?バイ)/],
-      ['actionWhoIsOff', /(だれ|誰|(W|w)ho\s*is).*(休|やす(ま|み|む)|(H|h)oliday)/],
-      ['actionWhoIsIn', /(だれ|誰|who\s*is)/],
-      ['actionCancelOff', /(休|やす(ま|み|む)|休暇|(H|h)oliday).*(キャンセル|消|止|やめ|ません|cancel)/],
-      ['actionOff', /(休|やす(ま|み|む)|休暇|(H|h)oliday)/],
-      ['actionSignIn', /(モ[ー〜]+ニン|も[ー〜]+にん|おっは|おは|へろ|はろ|ヘロ|ハロ|(H|h)i!|(H|h)ello|morning|出勤)/],
+      ['actionSignOut', /(bye|night|(c|see)\s*(u|you))/],
+      ['actionWhoIsOff', /(who\s*is).*(holiday)/],
+      ['actionWhoIsIn', /(who\s*is)/],
+      ['actionCancelOff', /(holiday).*(cancel)/],
+      ['actionOff', /(holiday)/],
+      ['actionSignIn', /(hi!|hello|morning)/],
       ['confirmSignIn', /__confirmSignIn__/],
       ['confirmSignOut', /__confirmSignOut__/],
       ['actionStartLunch', /(start).*(lunch)/],
       ['actionFinishLunch', /(finish).*(lunch)/],
-      ['actionCancelLeave', /(有給|(L|l)eave).*(キャンセル|消|止|やめ|ません|cancel)/],
-      ['actionLeave', /(有給|(L|l)eave)/],
-      ['actionLunch', /(ランチ|(L|l)unch).*(時間|time)/],
-      ['actionCancelRemote', /(リモート|(R|r)emote).*(キャンセル|消|止|やめ|ません|cancel)/],
-      ['actionRemote', /(リモート|(R|r)emote)/]
+      ['actionCancelLeave', /(leave).*(cancel)/],
+      ['actionLeave', /(leave)/],
+      ['actionLunch', /(lunch).*(time)/],
+      ['actionCancelRemote', /(remote).*(cancel)/],
+      ['actionRemote', /(remote)/]
     ];
 
     // Search method from message
@@ -1007,7 +1007,7 @@ loadTimesheets = function (exports) {
     }
   };
 
-  // During holiday
+  // Holiday check
   Timesheets.prototype.actionWhoIsOff = function(username, message) {
     var dateObj = DateUtils.toDate(DateUtils.now());
     var dateStr = DateUtils.format("Y/m/d", dateObj);
@@ -1032,6 +1032,7 @@ loadTimesheets = function (exports) {
       this.responder.template("During holiday", dateStr, result.sort().join(', '));
     }
   };
+  
 
   // Send mesage who don't start work
   Timesheets.prototype.confirmSignIn = function(username, message) {
