@@ -838,20 +838,22 @@ loadTimesheets = function (exports) {
   Timesheets.prototype.actionSignOut = function(username, message) {
     if(this.datetime) {
       var data = this.storage.get(username, this.datetime);
-      if((!data.signOut || data.signOut === '-') && data.signIn && (data.signIn != '-')) {
-        this.storage.set(username, this.datetime, {signOut: this.datetime});
-        this.responder.template("Finish work", username, this.datetimeStr);
-      }
-      else{
-        // Require time when update
-        if(!!this.time) {
+      if(data.signIn && (data.signIn != '-')) {
+        if(!data.signOut || data.signOut === '-') {
           this.storage.set(username, this.datetime, {signOut: this.datetime});
-          this.responder.template("Update ending time", username, this.datetimeStr);
-        }else{
-           if( this.message.indexOf('cancel') != -1){
-            this.storage.set(username, this.datetime, {signOut: '-'});
-            this.responder.template("Delete ending time", username, this.datetimeStr);
-           }
+          this.responder.template("Finish work", username, this.datetimeStr);
+        }
+        else{
+          // Require time when update
+          if(!!this.time) {
+            this.storage.set(username, this.datetime, {signOut: this.datetime});
+            this.responder.template("Update ending time", username, this.datetimeStr);
+          }else{
+            if( this.message.indexOf('cancel') != -1){
+              this.storage.set(username, this.datetime, {signOut: '-'});
+              this.responder.template("Delete ending time", username, this.datetimeStr);
+            }
+          }
         }
       }
     }
@@ -863,17 +865,17 @@ loadTimesheets = function (exports) {
     if(this.datetime) {
       var data = this.storage.get(username, this.datetime);
       if(!data.lunchStart || data.lunchStart === '-') {
-        this.storage.set(username, this.datetime, {lunchStart: this.datetime});
+        this.storage.set(username, this.datetime, {lunchStart: this.datetime, lunchTime: '-'});
         this.responder.template("Start lunch", username, this.datetimeStr);
       }
       else {
         // equire time when update
         if(!!this.time) {
-          this.storage.set(username, this.datetime, {lunchStart: this.datetime});
+          this.storage.set(username, this.datetime, {lunchStart: this.datetime, lunchTime: '-'});
           this.responder.template("Update lunch start time", username, this.datetimeStr);
         }else{
           if( this.message.indexOf('cancel') != -1){
-            this.storage.set(username, this.datetime, {lunchStart: '-'});
+            this.storage.set(username, this.datetime, {lunchStart: '-', lunchFinish: '-'});
             this.responder.template("Delete lunch start time", username, this.datetimeStr);
           }
         }
@@ -885,20 +887,21 @@ loadTimesheets = function (exports) {
   Timesheets.prototype.actionFinishLunch = function(username, message) {
     if(this.datetime) {
       var data = this.storage.get(username, this.datetime);
-      if(!data.lunchFinish || data.lunchFinish === '-') {
-        this.storage.set(username, this.datetime, {lunchFinish: this.datetime});
-        this.responder.template("Finish lunch", username, this.datetimeStr);
-      }
-      else{
-        // Require time when update
-        if(!!this.time) {
-          this.storage.set(username, this.datetime, {lunchFinish: this.datetime});
-          this.responder.template("Update lunch end time", username, this.datetimeStr);
+      if(data.lunchStart && (data.lunchStart != '-')){
+        if(!data.lunchFinish || data.lunchFinish === '-') {
+          this.storage.set(username, this.datetime, {lunchFinish: this.datetime, lunchTime: '-'});
+          this.responder.template("Finish lunch", username, this.datetimeStr);
         }else{
-           if( this.message.indexOf('cancel') != -1){
-            this.storage.set(username, this.datetime, {lunchFinish: '-'});
-            this.responder.template("Delete lunch end time", username, this.datetimeStr);
-           }
+          // Require time when update
+          if(!!this.time) {
+            this.storage.set(username, this.datetime, {lunchFinish: this.datetime, lunchTime: '-'});
+            this.responder.template("Update lunch end time", username, this.datetimeStr);
+          }else{
+            if( this.message.indexOf('cancel') != -1){
+              this.storage.set(username, this.datetime, {lunchFinish: '-'});
+              this.responder.template("Delete lunch end time", username, this.datetimeStr);
+            }
+          }
         }
       }
     }
@@ -908,9 +911,9 @@ loadTimesheets = function (exports) {
   Timesheets.prototype.actionLunch = function(username, message) {
     if(this.datetime) {
       var data = this.storage.get(username, this.datetime);
-        var lunchTimeString = this.datetime.getHours()*60 + this.datetime.getMinutes();
-        this.storage.set(username, this.datetime, {lunchStart: '-', lunchFinish: '-', lunchTime: lunchTimeString});
-        this.responder.template("Lunch time", username, this.timeStr);
+      var lunchTimeString = this.datetime.getHours()*60 + this.datetime.getMinutes();
+      this.storage.set(username, this.datetime, {lunchStart: '-', lunchFinish: '-', lunchTime: lunchTimeString});
+      this.responder.template("Lunch time", username, this.timeStr);
     }
   };
 
